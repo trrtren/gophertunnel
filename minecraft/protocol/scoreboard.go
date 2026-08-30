@@ -55,7 +55,7 @@ func (x *ScoreboardEntry) Marshal(r IO) {
 		if x.ObjectiveName != "" {
 			objective = Option(x.ObjectiveName)
 		}
-		OptionalFunc(r, &objective, r.String)
+		OptionalFunc(r, &objective, r.String) // now uses optionalfunc
 		x.ObjectiveName, _ = objective.Value()
 	case ScoreboardIdentityEntity, ScoreboardIdentityPlayer:
 		r.String(&x.ObjectiveName)
